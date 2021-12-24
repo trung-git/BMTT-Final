@@ -1,0 +1,168 @@
+/* Reset css */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+}
+
+/* Main */
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 46px;
+  background-color: rgb(0, 0, 0);
+  z-index: 1;
+}
+
+#header .home {
+  padding: auto 21px;
+  float: left;
+  color: #fff;
+  line-height: 46px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 46px;
+  padding: 0 24px;
+  font-size: 20px;
+}
+
+#header .add-btn {
+  padding: auto 21px;
+  float: left;
+  color: #fff;
+  line-height: 46px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 46px;
+  padding: 0 24px;
+  font-size: 20px;
+}
+
+#header .add-btn:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+#header .home:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+#header .user-btn {
+  padding: auto 21px;
+  float: right;
+  color: #fff;
+  line-height: 46px;
+  text-decoration: none;
+  line-height: 46px;
+  padding: 0 24px;
+  font-size: 20px;
+  background-color: rgb(63, 10, 10);
+}
+
+#header .user-btn:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+#header .user-icon {
+  line-height: 46px;
+  color: #fff;
+  font-size: 20px;
+}
+
+#header .logout-btn {
+  padding: auto 21px;
+  float: right;
+  color: #fff;
+  line-height: 46px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 46px;
+  padding: 0 24px;
+  font-size: 20px;
+}
+
+#header .logout-btn:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.content,
+.title {
+  display: block;
+  width: 70%;
+  height: 100px;
+  margin-top: 100px;
+  background-color: rgb(243, 229, 210);
+  margin-left: 15%;
+  border-radius: 10px;
+}
+
+#old-content,
+#old-title {
+  display: inline-block;
+  text-align: center;
+  color: #000;
+  font-size: 20px;
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.content {
+  margin-top: 50px;
+  height: 300px;
+}
+
+#save-btn,
+#cancel-btn {
+  margin-top: 50px;
+  margin-left: 20%;
+  height: 40px;
+  width: 95%;
+  max-width: 200px;
+  font-size: 16px;
+  background-color: #5d8af1;
+  border: none;
+  color: #ffffff;
+  padding: 0px 15px;
+  cursor: pointer;
+  display: block;
+  border-radius: 4px;
+  float: left;
+}
+
+#save-btn:hover,
+#cancel-btn:hover {
+  background-color: chocolate;
+}
+
+#save-btn,
+#delete-btn {
+  margin-top: 50px;
+  margin-left: 100px;
+  height: 40px;
+  width: 95%;
+  max-width: 200px;
+  font-size: 16px;
+  background-color: #5d8af1;
+  border: none;
+  color: #ffffff;
+  padding: 0px 15px;
+  cursor: pointer;
+  display: block;
+  border-radius: 4px;
+  float: left;
+}
+#delete-btn:hover {
+  background-color: rgb(153, 24, 24);
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Note</title>
+    <link rel="shortcut icon" type="png" href="./assets/image/logo.png" />
+    <link rel="stylesheet" href="./assets/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./assets/css/user_home.css">
+</head>
+<body>
+    <div id="header">
+        <div class="home ">
+            Home
+        </div>
+        <div class="add-btn js-addnote">
+            <i class="ti-plus"></i>
+        </div>
+        <div class="user-btn">
+            <i class="user-icon ti-user"></i>
+        </div>
+        <div class="logout-btn js-home">
+            <p>Đăng xuất</p>
+        </div>
+    </div>
+    <div id="note">
+        <div class="row notes-list ">
+            <div class="col col-third">
+                <div class="note-body js-load-edit">
+                    <h3 class="note-title">Tiêu đề ghi chú</h3>
+                    <p class="note-content">Nội dung ghi chú</p> 
+                </div>
+            </div>
+            <div class="col col-third">
+                <div class="note-body js-load-edit">
+                    <h3 class="note-title">Tiêu đề ghi chú</h3>
+                    <p class="note-content">Nội dung ghi chú</p>
+                </div>
+            </div>
+            <div class="col col-third">
+                <div class="note-body js-load-edit">
+                    <h3 class="note-title">Tiêu đề ghi chú</h3>
+                    <p class="note-content">Nội dung ghi chú</p>
+                </div>
+            </div>
+        </div>
+        <div class="row notes-list">
+            <div class="col col-third">
+                <div class="note-body js-load-edit">
+                    <h3 class="note-title">Tiêu đề ghi chú</h3>
+                    <p class="note-content">Nội dung ghi chú</p>
+                    
+                </div>
+            </div>
+            <div class="col col-third">
+                <div class="note-body js-load-edit">
+                    <h3 class="note-title">Tiêu đề ghi chú</h3>
+                    <p class="note-content">Nội dung ghi chú</p>
+                </div>
+            </div>
+            <div class="col col-third">
+                <div class="note-body js-load-edit">
+                    <h3 class="note-title">Tiêu đề ghi chú</h3>
+                    <p class="note-content">Nội dung ghi chú</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-add">
+        <div class="modal-container js-modal-container">
+            <div class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </div>
+
+            <header class="modal-header">
+                Thêm ghi chú mới
+            </header>
+
+            <div class="modal-body">
+                <label for="modal-input-title" class="modal-label">
+                    Tiêu đề 
+                </label>
+                <input id="modal-input-title" type="text" class="modal-input" placeholder="Nhập tiêu đề">
+
+                <label for="modal-input-content" class="modal-label">
+                    Nội dung
+                </label>
+                <input  id="modal-input-content"  type="text" class="modal-input" placeholder="Nhập nội dung ghi chú">
+                <button id="add-btn">
+                    Lưu ghi chú <i class="ti-check"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        /*js for add new Note modal*/
+        const addBtns = document.querySelectorAll('.js-addnote')
+        const modal = document.querySelector('.modal-add')
+        const modalClose = document.querySelector('.js-modal-close')
+        const modalContainer = document.querySelector('.js-modal-container')
+
+        function showAdd() {
+            modal.classList.add('open')
+        }
+
+        function closeAdd() {
+            modal.classList.remove('open')
+        }
+        for(const addBtn of addBtns) {
+            addBtn.addEventListener('click', showAdd)
+        }
+
+        modalClose.addEventListener('click', closeAdd)
+
+        // modal.addEventListener('click', closeAdd)
+
+        modalContainer.addEventListener('click', function (event) {
+            event.stopPropagation()
+        })
+    </script>
+    
+    <script> /*js for load edit page*/
+        const loadEdits = document.querySelectorAll('.js-load-edit')
+        function load() {
+            location.replace("./edit_note.html")
+        }
+        for(const loadEdit of loadEdits){
+            loadEdit.addEventListener('click', load)
+        }
+    </script>
+
+    </script>
+    
+    <script> /*js for load home page*/
+        const homes = document.querySelectorAll('.js-home')
+        function loadHome() {
+            location.replace("./index.html")
+        }
+        for(const home of homes){
+            home.addEventListener('click', loadHome)
+        }
+    </script>
+</body>
+</html>

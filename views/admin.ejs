@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Note</title>
+    <link
+      rel="shortcut icon"
+      type="png"
+      href="/simplenote/simplenote/assets/image/logo.png"
+    />
+    <link
+      rel="stylesheet"
+      href="/simplenote/simplenote/assets/themify-icons/themify-icons.css"
+    />
+    <link rel="stylesheet" href="/simplenote/simplenote/assets/css/admin.css" />
+  </head>
+  <body>
+    <div id="header">
+      <div class="home">Home</div>
+      <div class="user-btn">
+        <p><%= locals.user.name %></p>
+      </div>
+      <div class="logout-btn js-home">
+        <p>Đăng xuất</p>
+      </div>
+    </div>
+    <div id="user">
+      <% users.forEach(function(user) { %>
+
+      <div class="row users-list">
+        <div class="col col-full">
+          <div class="user-body">
+            <i class="ti-user user-logo"></i>
+            <p class="user-inf user-name"><%= user.name%></p>
+            <p class="user-inf user-email"><%= user.email%></p>
+            <button
+              class="btn btnDelUser"
+              id="btnDelUser"
+              data-id="<%= user._id%>"
+            >
+              Xóa
+            </button>
+            <button
+              class="btn js-edit admin-edit"
+              data-email="<%= user.email%>"
+              data-name="<%= user.name%>"
+              data-id="<%= user._id %>"
+            >
+              Sửa
+            </button>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+
+    <div class="modal-edit">
+      <div class="modal-container js-modal-container">
+        <div class="modal-close js-modal-close">
+          <i class="ti-close"></i>
+        </div>
+        <header class="modal-header">Chỉnh sửa thông tin người dùng</header>
+        <div class="modal-body">
+          <div class="edit-user-inf" contenteditable="true">
+            <p id="edit-name">Nguyễn Văn A</p>
+          </div>
+          <div class="edit-user-inf" contenteditable="true">
+            <p id="edit-email">nguyenvana@gmail.com</p>
+          </div>
+          <button id="cancel-btn">Hủy thay đổi</button>
+          <button id="save-btn-admin" data-name="" data-email="" data-id="">
+            Lưu thay đổi
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      /*js for add new Note modal*/
+      const editBtns = document.querySelectorAll('.js-edit');
+      const modal = document.querySelector('.modal-edit');
+      const modalClose = document.querySelector('.js-modal-close');
+      const modalContainer = document.querySelector('.js-modal-container');
+
+      function showEdit() {
+        modal.classList.add('open');
+      }
+
+      function closeEdit() {
+        modal.classList.remove('open');
+      }
+      for (const editBtn of editBtns) {
+        editBtn.addEventListener('click', showEdit);
+      }
+
+      modalClose.addEventListener('click', closeEdit);
+
+      // modal.addEventListener('click', closeAdd)
+
+      modalContainer.addEventListener('click', function (event) {
+        event.stopPropagation();
+      });
+    </script>
+    <script>
+      /*js for load home page*/
+      const homes = document.querySelectorAll('.js-home');
+      function loadHome() {
+        location.replace('/logout');
+      }
+      for (const home of homes) {
+        home.addEventListener('click', loadHome);
+      }
+    </script>
+    <script>
+      const editBtnss = document.querySelectorAll('.admin-edit');
+      function setDataImModal(id, name, email) {
+        document.getElementById('edit-name').textContent = name;
+        document.getElementById('edit-email').textContent = email;
+
+        document
+          .getElementById('save-btn-admin')
+          .setAttribute('data-name', name);
+        document
+          .getElementById('save-btn-admin')
+          .setAttribute('data-email', email);
+        document.getElementById('save-btn-admin').setAttribute('data-id', id);
+      }
+      for (const editBtn of editBtnss) {
+        editBtn.addEventListener('click', function () {
+          setDataImModal(
+            editBtn.getAttribute('data-id'),
+            editBtn.getAttribute('data-name'),
+            editBtn.getAttribute('data-email')
+          );
+        });
+      }
+    </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="js/index.js"></script>
+  </body>
+</html>

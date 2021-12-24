@@ -1,0 +1,98 @@
+/* Reset css */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Main */
+
+
+#logo{
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#title{
+    text-align: center;
+    font-size: 30px;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+.login{
+    border: solid 1px #c3c4c7;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #000;
+    height: 40px;
+    padding: 13px 15px;
+    margin: 8px auto 0;
+    max-width: 320px;
+    width: 95%;
+    font-size: 16px;
+    display: block;
+}
+.login-btn{
+    height: 40px;
+    width: 95% ;
+    max-width: 320px;
+    font-size: 16px;
+    background-color: #3361cc;
+    border: none;
+    color: #ffffff;
+    margin: 16px auto 8px;
+    padding: 0px 15px;
+    cursor: pointer;
+    display: block;
+    border-radius: 4px;
+}
+/* .remember-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0 16px;
+    color: #ccc;
+    margin-bottom: 50px;
+}
+.remember-wrapper #check{
+    margin-top: 2px;
+    margin-right: 8px;
+} */
+
+.or-line {
+    display: block;
+    border-bottom: 1px solid #dbdee0;
+    margin: -20px auto;
+    max-width: 320px;
+    text-align: center;
+    width: 95%;
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+#or-text{
+    text-align: center;
+    color: #a7aaad;
+}
+
+/* #login-btn-facebook, */
+#login-btn-google{
+    background-color: #006088;
+}
+
+.login-logo{
+    margin-top: 6px;
+}
+
+/* .ti-facebook, */
+.ti-google{
+    background-color:#006088;
+    margin-left: 8px;
+}

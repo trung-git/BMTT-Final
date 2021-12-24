@@ -1,0 +1,91 @@
+/* Reset css */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ccc;
+}
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 46px;
+  background-color: rgb(0, 0, 0);
+  z-index: 1;
+}
+
+#header .home {
+  padding: auto 21px;
+  float: left;
+  color: #fff;
+  line-height: 46px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 46px;
+  padding: 0 24px;
+  font-size: 20px;
+}
+
+#header .home:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+#header .user-btn {
+  padding: auto 21px;
+  float: right;
+  color: #fff;
+  line-height: 46px;
+  text-decoration: none;
+  line-height: 46px;
+  padding: 0 24px;
+  font-size: 20px;
+  background-color: rgb(63, 10, 10);
+}
+
+#header .user-btn:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+#header .user-icon {
+  line-height: 46px;
+  color: #fff;
+  font-size: 20px;
+}
+
+#header .logout-btn {
+  padding: auto 21px;
+  float: right;
+  color: #fff;
+  line-height: 46px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 46px;
+  padding: 0 24px;
+  font-size: 20px;
+}
+
+#header .logout-btn:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+#error-message {
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 20%;
+  text-align: center;
+}
+
+h1,
+h2 {
+  color: red;
+  font-size: 50px;
+}

@@ -1,0 +1,306 @@
+/* Reset css */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.clear {
+  clear: both;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.row {
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.row::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.col {
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.col-third {
+  width: 33.3333333%;
+}
+
+/* Main */
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 46px;
+  background-color: rgb(0, 0, 0);
+  z-index: 1;
+}
+
+/* #nav{
+    display: inline-block;
+}
+
+
+#nav > li{
+    display: inline-block;
+}
+
+#nav li{
+    position: relative;
+}
+
+#nav >li >a{
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#nav li a{
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    display: inline-block;
+}
+
+#nav li:hover .subnav{
+    display: block;
+}
+
+#nav > li:hover > a {
+    color: #000;
+    background-color: #ccc;
+} */
+
+#header .home {
+  padding: auto 21px;
+  float: left;
+  color: #fff;
+  line-height: 46px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 46px;
+  padding: 0 24px;
+  font-size: 20px;
+}
+
+#header .add-btn {
+  padding: auto 21px;
+  float: left;
+  color: #fff;
+  line-height: 46px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 46px;
+  padding: 0 24px;
+  font-size: 20px;
+}
+
+#header .add-btn:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+#header .home:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+/* #header .user-btn{
+    padding: 0 21px;
+    float: right;
+} */
+#header .user-btn {
+  padding: auto 21px;
+  float: right;
+  color: #fff;
+  line-height: 46px;
+  text-decoration: none;
+  line-height: 46px;
+  padding: 0 24px;
+  font-size: 20px;
+  background-color: rgb(63, 10, 10);
+}
+#header .user-btn:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+#header .user-icon {
+  line-height: 46px;
+  color: #fff;
+  font-size: 20px;
+}
+
+#header .logout-btn {
+  padding: auto 21px;
+  float: right;
+  color: #fff;
+  line-height: 46px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 46px;
+  padding: 0 24px;
+  font-size: 20px;
+}
+
+#header .logout-btn:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+#note {
+  margin-top: 50px;
+}
+.notes-list {
+  margin-top: 24px;
+}
+
+.note-body {
+  border-radius: 5px;
+  background-color: #ccc;
+  padding: 16px;
+  font-size: 15px;
+  height: 200px;
+  margin: 50px;
+}
+.note-body:hover {
+  background-color: rgb(140, 154, 236);
+}
+
+.note-body:hover {
+  cursor: pointer;
+}
+
+.note-title {
+  color: #000;
+  margin-top: 15px;
+}
+
+.note-content {
+  margin-top: 15px;
+  padding-right: 16px;
+}
+
+.modal-add {
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.modal-add.open {
+  display: flex;
+}
+
+.modal-container {
+  background: #fff;
+  width: 900px;
+  max-width: calc(100% - 32px);
+  min-height: 200px;
+  position: relative;
+  animation: modalFaceIn ease 2s;
+}
+
+.modal-header {
+  background: #009688;
+  height: 129px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 30px;
+  letter-spacing: 4px;
+  font-weight: 500;
+}
+
+.modal-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 8px 16px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background: #ccc;
+  color: #000;
+}
+
+.modal-label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.modal-body {
+  padding: 16px;
+  height: 400px;
+}
+
+.modal-input {
+  border: 1px solid #ccc;
+  padding: 8px;
+  width: 100%;
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+#modal-input-content {
+  height: 150px;
+}
+
+#add-btn {
+  background: #009688;
+  border: none;
+  width: 100%;
+  padding: 18px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#add-btn:hover {
+  background: #ccc;
+  color: black;
+}
+
+.modal-footer {
+  padding: 16px;
+  text-align: right;
+}
+
+.modal-footer a {
+  color: #2196f3;
+}
+
+.modal-edit {
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  justify-content: center;
+  display: none;
+}

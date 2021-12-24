@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Note</title>
+    <link
+      rel="shortcut icon"
+      type="png"
+      href="/simplenote/simplenote/assets/image/logo.png"
+    />
+    <link
+      rel="stylesheet"
+      href="/simplenote/simplenote/assets/themify-icons/themify-icons.css"
+    />
+    <link rel="stylesheet" href="/simplenote/simplenote/assets/css/error.css" />
+  </head>
+  <body>
+    <div id="header">
+      <div class="home">Home</div>
+      <div class="user-btn">
+        <p><%= locals.user.name %></p>
+      </div>
+      <div class="logout-btn js-home">
+        <p>Đăng xuất</p>
+      </div>
+
+      <div id="error-message">
+        <h1>Đã có lỗi xảy ra.</h1>
+        <h2>Vui lòng kiểm tra lại</h2>
+      </div>
+    </div>
+  </body>
+  <script>
+    /*js for load home page*/
+    const homes = document.querySelectorAll('.js-home');
+    function loadHome() {
+      location.replace('/logout');
+    }
+    for (const home of homes) {
+      home.addEventListener('click', loadHome);
+    }
+  </script>
+  <script>
+    const h = document.querySelectorAll('.home');
+    function loadHome() {
+      location.replace('/home');
+    }
+    for (const home of h) {
+      home.addEventListener('click', loadHome);
+    }
+  </script>
+</html>

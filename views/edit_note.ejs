@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Note</title>
+    <link
+      rel="shortcut icon"
+      type="png"
+      href="/simplenote/simplenote/assets/image/logo.png"
+    />
+    <link
+      rel="stylesheet"
+      href="/simplenote/simplenote/assets/themify-icons/themify-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/simplenote/simplenote/assets/css/edit_note.css"
+    />
+  </head>
+  <body>
+    <div id="header">
+      <div class="home">Home</div>
+      <div class="user-btn">
+        <p><%= locals.user.name %></p>
+      </div>
+      <div class="logout-btn js-home">
+        <p>Đăng xuất</p>
+      </div>
+    </div>
+    <div class="title" contenteditable="true">
+      <p id="old-title"><%= note.title%></p>
+    </div>
+    <div class="content" contenteditable="true">
+      <p id="old-content"><%= note.content%></p>
+    </div>
+
+    <button onclick="window.location.href ='/home'" id="cancel-btn">
+      Hủy thay đổi
+    </button>
+
+    <button id="save-btn" data-id="<%= note._id%>">Lưu thay đổi</button>
+    <button id="delete-btn" data-id="<%= note._id%>">Xóa ghi chú</button>
+
+    <script>
+      const closeEdits = document.querySelectorAll('.js-cancel');
+
+      function load() {
+        location.replace('/home');
+      }
+      for (const closeEdit of closeEdits) {
+        closeEdit.addEventListener('click', load);
+      }
+    </script>
+    <script>
+      /*js for load home page*/
+      const homes = document.querySelectorAll('.js-home');
+      function loadLogout() {
+        location.replace('/logout');
+      }
+      for (const home of homes) {
+        home.addEventListener('click', loadLogout);
+      }
+    </script>
+    <script>
+      const h = document.querySelectorAll('.home');
+      function loadHome() {
+        location.replace('/home');
+      }
+      for (const home of h) {
+        home.addEventListener('click', loadHome);
+      }
+    </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="/js/index.js"></script>
+  </body>
+</html>

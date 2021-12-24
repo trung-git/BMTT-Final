@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Note</title>
+    <link rel="shortcut icon" type="png" href="./assets/image/logo.png" />
+    <link rel="stylesheet" href="./assets/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./assets/css/admin.css">
+</head>
+<body>
+    <div id="header">
+        <div class="home">
+            Home
+        </div>
+        <div class="user-btn">
+            <i class="user-icon ti-user"></i>
+        </div>
+        <div class="logout-btn">
+            <p>Đăng xuất</p>
+        </div>
+    </div>
+    <div id="user">
+        <div class="row users-list">
+            <div class="col col-full">
+                <div class="user-body">
+                    <i class="ti-user user-logo"></i>
+                    <p class="user-inf user-name">Nguyen Van aaaaaa bbbbb ccccc</p>
+                    <p class="user-inf user-email">sample@gmail.com</p>
+                    <button class="btn">Xóa</button>
+                    <button class="btn js-edit">Sửa</button>
+                </div>
+            </div>
+        </div>
+        <div class="row users-list">
+            <div class="col col-full">
+                <div class="user-body">
+                    <i class="ti-user user-logo"></i>
+                    <p class="user-inf user-name">Nguyen Van aaaaaa bbbbb ccccc</p>
+                    <p class="user-inf user-email">sample@gmail.com</p>
+                    <button class="btn">Xóa</button>
+                    <button class="btn js-edit">Sửa</button>
+                </div>
+            </div>
+        </div>
+        <div class="row users-list">
+            <div class="col col-full">
+                <div class="user-body">
+                    <i class="ti-user user-logo"></i>
+                    <p class="user-inf user-name">Nguyen Van aaaaaa bbbbb ccccc</p>
+                    <p class="user-inf user-email">sample@gmail.com</p>
+                    <button class="btn">Xóa</button>
+                    <button class="btn js-edit">Sửa</button>
+                </div>
+            </div>
+        </div>
+        <div class="row users-list">
+            <div class="col col-full">
+                <div class="user-body">
+                    <i class="ti-user user-logo"></i>
+                    <p class="user-inf user-name">Nguyen Van aaaaaa bbbbb ccccc</p>
+                    <p class="user-inf user-email">sample@gmail.com</p>
+                    <button class="btn">Xóa</button>
+                    <button class="btn js-edit">Sửa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-edit">
+        <div class="modal-container js-modal-container">
+            <div class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </div>
+            <header class="modal-header">
+                Chỉnh sửa thông tin người dùng
+            </header>
+            <div class="modal-body">
+                <div class="edit-user-inf" contenteditable="true" >
+                    <p id="edit-name">Nguyễn Văn A</p>
+                </div>
+                <div class="edit-user-inf" contenteditable="true" >
+                    <p id="edit-email">nguyenvana@gmail.com</p>
+                </div>
+                <button id="cancel-btn">Hủy thay đổi</button>
+                <button id="save-btn">Lưu thay đổi</button>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        /*js for add new Note modal*/
+        const editBtns = document.querySelectorAll('.js-edit')
+        const modal = document.querySelector('.modal-edit')
+        const modalClose = document.querySelector('.js-modal-close')
+        const modalContainer = document.querySelector('.js-modal-container')
+
+        function showEdit() {
+            modal.classList.add('open')
+        }
+
+        function closeEdit() {
+            modal.classList.remove('open')
+        }
+        for(const editBtn of editBtns) {
+            editBtn.addEventListener('click', showEdit)
+        }
+
+        modalClose.addEventListener('click', closeEdit)
+
+        // modal.addEventListener('click', closeAdd)
+
+        modalContainer.addEventListener('click', function (event) {
+            event.stopPropagation()
+        })
+    </script>
+
+    
+
+</body>
+</html>

@@ -1,0 +1,274 @@
+/* Reset css */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+}
+.row {
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.row::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.col {
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.col-full {
+  width: 100%;
+}
+
+/* Main */
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 46px;
+  background-color: rgb(0, 0, 0);
+  z-index: 1;
+}
+
+#header .home {
+  padding: auto 21px;
+  float: left;
+  color: #fff;
+  line-height: 46px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 46px;
+  padding: 0 24px;
+  font-size: 20px;
+}
+
+#header .add-btn {
+  padding: auto 21px;
+  float: left;
+  color: #fff;
+  line-height: 46px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 46px;
+  padding: 0 24px;
+  font-size: 20px;
+}
+
+#header .add-btn:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+#header .home:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+#header .user-btn {
+  padding: auto 21px;
+  float: right;
+  color: #fff;
+  line-height: 46px;
+  text-decoration: none;
+  line-height: 46px;
+  padding: 0 24px;
+  font-size: 20px;
+  background-color: rgb(63, 10, 10);
+}
+
+#header .user-btn:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+#header .user-icon {
+  line-height: 46px;
+  color: #fff;
+  font-size: 20px;
+}
+
+#header .logout-btn {
+  padding: auto 21px;
+  float: right;
+  color: #fff;
+  line-height: 46px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 46px;
+  padding: 0 24px;
+  font-size: 20px;
+}
+
+#header .logout-btn:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+#user {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.user-body {
+  border-radius: 5px;
+  background-color: #ccc;
+  padding: 16px;
+  font-size: 15px;
+  height: 80px;
+  margin: 10px 50px;
+}
+
+.user-logo {
+  line-height: 46px;
+  font-size: 20px;
+  float: left;
+}
+
+.user-inf {
+  display: block;
+  float: left;
+  margin-left: 20px;
+  line-height: 46px;
+  font-size: 20px;
+}
+.user-email {
+  margin-left: 100px;
+}
+
+.btn {
+  float: right;
+  height: 40px;
+  width: 95%;
+  max-width: 100px;
+  font-size: 20px;
+  background-color: rgb(104, 103, 103);
+  border: none;
+  color: #000;
+  margin-right: 20px;
+  padding: 0px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.btn:hover {
+  background-color: cadetblue;
+}
+
+.modal-edit {
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.modal-edit.open {
+  display: flex;
+}
+
+.modal-container {
+  background: #fff;
+  width: 900px;
+  max-width: calc(100% - 32px);
+  max-height: 300px;
+  /* min-height: 200px; */
+  position: relative;
+  animation: modalFaceIn ease 2s;
+}
+
+.modal-header {
+  background: #009688;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 30px;
+  letter-spacing: 4px;
+  font-weight: 500;
+}
+
+.modal-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 8px 16px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background: #ccc;
+  color: #000;
+}
+
+.modal-label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.modal-body {
+  padding: 16px;
+  height: 400px;
+}
+
+.edit-user-inf {
+  border-radius: 5px;
+  background-color: #ccc;
+  padding: 16px;
+  font-size: 20px;
+  height: 50px;
+  margin: 10px 50px;
+}
+
+#edit-email,
+#edit-name {
+  display: block;
+  text-align: center;
+  color: #000;
+  font-size: 20px;
+  float: left;
+  /* margin-top: 40px; */
+  margin-left: 20px;
+}
+
+#save-btn-admin,
+#cancel-btn {
+  margin-top: 20px;
+  margin-left: 15%;
+  height: 40px;
+  width: 95%;
+  max-width: 200px;
+  font-size: 16px;
+  background-color: #5d8af1;
+  border: none;
+  color: #ffffff;
+  padding: 0px 15px;
+  cursor: pointer;
+  display: block;
+  border-radius: 4px;
+  float: left;
+}
+
+#save-btn-admin:hover {
+  background-color: chocolate;
+}
+#cancel-btn:hover {
+  background-color: red;
+}

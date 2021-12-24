@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Note</title>
+    <link rel="shortcut icon" type="png" href="./assets/image/logo.png" />
+    <link rel="stylesheet" href="./assets/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./assets/css/edit_note.css">
+</head>
+<body>
+    <div id="header">
+        <div class="home">
+            Home
+        </div>
+        <div class="user-btn">
+            <i class="user-icon ti-user"></i>
+        </div>
+        <div class="logout-btn">
+            <p>Đăng xuất</p>
+        </div>
+    </div>
+    <div class="title" contenteditable="true" >
+        <p id="old-title">Tiêu đề hiện tại</p>
+    </div>
+    <div class="content" contenteditable="true" >
+        <p id="old-content">Nội dung hiện tại</p>
+    </div>
+
+    <button onclick="window.location.href ='./user_home.html'" id="cancel-btn">Hủy thay đổi</button>
+    <button id="save-btn">Lưu thay đổi</button>
+
+    <script>
+        const closeEdits = document.querySelectorAll('.js-cancel')
+
+        function load() {
+            location.replace("./user_home.html")
+        }
+        for(const loadEdit of loadEdits){
+            closeEdit.addEventListener('click', load)
+        }
+    </script>
+
+</body>
+</html>

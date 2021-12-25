@@ -10,7 +10,7 @@ process.on('uncaughtException', (err) => {
 
 //Variable
 const PORT = process.env.PORT || 3000;
-const DB_URL = process.env.DB_LOCAL;
+const DB_URL = process.env.DB_CLOUD;
 //MongoDB connection
 mongoose
   .connect(DB_URL, {

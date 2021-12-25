@@ -5,7 +5,6 @@ const AppError = require('./../utils/appError');
 const crypto = require('crypto');
 const { sendMail } = require('../utils/email');
 const { promisify } = require('util');
-const sanitize = require('mongo-sanitize');
 
 const signToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -35,10 +34,10 @@ const createAndSendToken = (user, statusCode, req, res) => {
 };
 exports.signup = catchAsync(async (req, res, next) => {
   const newUser = await User.create({
-    name: sanitize(req.body.name),
-    email: sanitize(req.body.email),
-    password: sanitize(req.body.password),
-    passwordConfirm: sanitize(req.body.passwordConfirm),
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password,
+    passwordConfirm: req.body.passwordConfirm,
   });
 
   // Send email in mailtrap
@@ -51,7 +50,7 @@ exports.signup = catchAsync(async (req, res, next) => {
 });
 
 exports.login = catchAsync(async (req, res, next) => {
-  const { email, password } = sanitize(req.body);
+  const { email, password } = req.body;
 
   // 1) Check if email and password exist
   if (!email || !password) {
@@ -181,7 +180,7 @@ exports.restrictTo = (...roles) => {
 
 exports.forgotPassword = catchAsync(async (req, res, next) => {
   //Get user by posted email
-  const user = await User.findOne({ email: sanitize(req.body.email) });
+  const user = await User.findOne({ email: req.body.email });
 
   if (!user) {
     return next(
@@ -242,15 +241,10 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 
 exports.updatePassword = catchAsync(async (req, res, next) => {
   //Get user from collection
-  const user = await User.findById(sanitize(req.user.id)).select('+password');
+  const user = await User.findById(req.user.id).select('+password');
 
   //check if POSTed current password is correct
-  if (
-    !(await user.correctPassword(
-      sanitize(req.body.passwordCurrent),
-      user.password
-    ))
-  ) {
+  if (!(await user.correctPassword(req.body.passwordCurrent, user.password))) {
     return next(new AppError('Your current password is wrong', 401));
   }
   //If so, update the password

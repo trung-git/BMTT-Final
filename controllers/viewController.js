@@ -4,7 +4,6 @@ const { promisify } = require('util');
 const jwt = require('jsonwebtoken');
 const Note = require('./../models/noteModel');
 const User = require('./../models/userModel');
-const sanitize = require('mongo-sanitize');
 exports.isLogin1 = async (req, res, next) => {
   try {
     if (req.isAuthenticated()) {
@@ -127,7 +126,7 @@ exports.home = catchAsync(async (req, res, next) => {
 });
 
 exports.edit = catchAsync(async (req, res, next) => {
-  const note = await Note.findById(sanitize(req.params.id));
+  const note = await Note.findById((req.params.id));
   // console.log(note);
   res.render('edit_note', { note });
 });

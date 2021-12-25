@@ -14,7 +14,7 @@ passport.use(
       clientID:
         '629885708455-lsf606087p6390ic1ifbprvs2cle2f6v.apps.googleusercontent.com',
       clientSecret: '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',
-      callbackURL: '/auth/google/callback',
+      callbackURL: 'https://bmtt-final.herokuapp.com/auth/google/callback',
     },
     async function (accessToken, refreshToken, profile, cb) {
       const user = await User.findOne({ email: profile._json.email });
